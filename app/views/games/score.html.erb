@@ -1,0 +1,21 @@
+<h2>Result</h2>
+
+<!--   <=%if !@in_grid%>
+  <p>Sorry but<em><%= @submit %></em> can't be built out of <%= @letters %>.</p>
+  <=% elsif !@is_english%>
+  <p>Sorry but<em> <%= @submit %></em> does not seem to be an English word...</p>
+  <=% else %>
+  <p><em>Congratulations! <%= @submit %> is a valid English word.</em></p>
+  <=% end %>
+</p> -->
+
+<%if @in_grid && @is_english%>
+  <p><em>Congratulations! <%=@submit%> is a valid English word.</em></p>
+  <%elsif !@is_english%>
+  <p>Sorry but<em> <%=@submit%></em> does not seem to be an English word...</p>
+  <%else%>
+  <p>Sorry but<em><%=@submit%></em> can't be built out of <%=@letters%>.</p>
+<%end%>
+
+
+<%= link_to 'Play Again', '/new' %>
